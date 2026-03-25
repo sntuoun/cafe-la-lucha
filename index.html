@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#fcf9f4",
+              "on-tertiary-fixed-variant": "#8c171b",
+              "on-tertiary-fixed": "#410004",
+              "secondary-container": "#cdeace",
+              "surface-tint": "#755750",
+              "outline": "#827471",
+              "surface-container-high": "#ebe8e3",
+              "secondary-fixed-dim": "#b2ceb3",
+              "primary-container": "#4e342e",
+              "tertiary-fixed": "#ffdad7",
+              "on-primary-fixed-variant": "#5c403a",
+              "inverse-on-surface": "#f3f0eb",
+              "surface-variant": "#e5e2dd",
+              "on-tertiary-container": "#ff7d76",
+              "surface-container-highest": "#e5e2dd",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#504442",
+              "primary": "#361f1a",
+              "outline-variant": "#d4c3bf",
+              "inverse-primary": "#e5beb5",
+              "tertiary-container": "#7a0510",
+              "surface-container": "#f0ede8",
+              "error-container": "#ffdad6",
+              "error": "#ba1a1a",
+              "on-secondary-fixed": "#08200f",
+              "background": "#fcf9f4",
+              "on-secondary-container": "#516a54",
+              "on-error": "#ffffff",
+              "inverse-surface": "#31302d",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f6f3ee",
+              "on-error-container": "#93000a",
+              "surface-dim": "#dcdad5",
+              "on-primary-container": "#c19c94",
+              "tertiary": "#530006",
+              "tertiary-fixed-dim": "#ffb3ad",
+              "on-background": "#1c1c19",
+              "secondary": "#4b644e",
+              "on-secondary-fixed-variant": "#344c38",
+              "on-surface": "#1c1c19",
+              "primary-fixed-dim": "#e5beb5",
+              "secondary-fixed": "#cdeace",
+              "on-primary-fixed": "#2b1611",
+              "primary-fixed": "#ffdad2",
+              "surface-bright": "#fcf9f4"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    vertical-align: middle
+    }
+.wooden-frame {
+    border: 12px solid #361f1a;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.5);
+    background: white;
+    padding: 8px
+    }
+.gallery-shadow {
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25)
+    }
+.hero-grain {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDguDw0-JfJPaa9qCFjYbN8JtWY57_OdloRTVWZr2imjsqYMEGLDj_4pMZGDHbCIVV4Pp5dN7uCEwbHIwfN3MAp44TLTzwtsKeRItBhOYiMSjQ8fESWY9ejrOEzTR70wppkhWXsULH0cIZmbnxl3ys94-rcNkQCFpYJZXkgtge9LlFbVmQzPXbCH2IgcutfxwZ-1lnbmoN4g4J-cLUpPpHj7bpDob3uu3quOaqS-xE09jlNCIWuVhPLmA0D6x4ya7ckK65R7_3lniI)
+    }</style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<a class="flex items-center gap-3" href="#">
+<img alt="Café La Lucha Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ujkHuAP6euJLOLuCxPY6txvEL4P66sasMuAkRvxJnevXyE3N1UzDheSfYNiwutTwBqH5It57zUPr9uGutcYihp1Dm3ET2XTzwn0BS3-MBnnYRJLYqCNu6a0BK0UcHux403GDQuHjr2dvO_eXXhr8w9vJCo0gsI6-Ju_b1fDv_Dnk4_0Ax-UAMN4l-nK0uoOEDSP-RKbL2YNpSzMu092RDqR9dARlTgQRHercLi6oXJ8_CNN5H8XTH6eB28JM7y1809cjO2dnFc5Dg"/>
+<span class="font-headline text-xl font-bold italic text-primary hidden sm:block">La Lucha</span>
+</a>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-label text-xs uppercase tracking-widest font-bold text-primary border-b-2 border-primary pb-1" href="#menu">Menu</a>
+<a class="font-label text-xs uppercase tracking-widest font-medium text-on-surface-variant hover:text-primary transition-colors" href="#contacto">Contacto</a>
+<a class="font-label text-xs uppercase tracking-widest font-medium text-on-surface-variant hover:text-primary transition-colors" href="#ubicacion">Ubicación</a>
+<button class="bg-primary text-on-primary px-8 py-2.5 rounded-sm font-bold tracking-tighter uppercase text-xs hover:bg-primary-container transition-all">Reservar</button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center pt-24 overflow-hidden bg-primary overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-black/50 z-10"></div>
+<img alt="Interior Café La Lucha" class="w-full h-full object-cover opacity-60 scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0uhs8qX3k3ySVThYfHzyOALFLN1vhNUz7Zeow-M8OGOxFvigaeRwPG2rkOJnmMp_Ky8nH7DUwH64Ir0i8-e2USdljr_PyIWHiU5yyNGmeMrSry_yyufIm5vPwlaQ_zJzhbUk08HFU4JBaVyOPPJ7VgauhNHAsuaIUytQFfcO5MeUTPUKctkma-HIm3FNYJ_F8txpLQ0QNIQJSzZeNoZIERuKh9Fy4CmKuy4tpvTVM93gdvkwTkfRYKDvHqC48UD0BNhWO8Ba2knj8w"/>
+</div>
+<div class="relative z-20 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-4xl">
+<span class="font-label tracking-[0.4em] uppercase text-surface mb-6 block text-sm opacity-80">Patrimonio del Grano</span>
+<h1 class="font-headline text-7xl md:text-[10rem] text-surface leading-[0.85] mb-10">
+                Café <br/>
+<span class="italic font-light">La Lucha</span>
+</h1>
+<p class="font-body text-2xl text-surface/90 max-w-xl mb-12 leading-relaxed font-light">
+                Un refugio de aroma y herencia en el corazón de la ciudad. Donde cada grano cuenta una historia de resistencia.
+            </p>
+<div class="flex flex-wrap gap-6">
+<a class="bg-surface text-primary px-12 py-5 rounded-sm font-bold tracking-widest uppercase text-sm hover:bg-surface-container transition-all gallery-shadow" href="#menu">
+                    Explorar la Colección
+                </a>
+</div>
+</div>
+</div>
+<!-- Floating Gallery Piece 1 -->
+<div class="absolute right-[-5%] top-[20%] hidden lg:block transform rotate-6 scale-110">
+<div class="wooden-frame w-80 gallery-shadow">
+<img alt="Caramel Latte Art" class="w-full h-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ugODRIgtCmOPz8WydprvxcKVeA3UdCAy_XlhQtjMxezEudISyo1GGNz_DYjv0jvYONjX-YfFyc3NFiRsYTlJeMt3BU9a8ABrDIJRLcvJ0ut60QAoz8hwduKp-ja8AqD4zfJhE9nWJOtgvQVZ7ktpV3-pPWf1jROm5UxB2RRtn3a1jZH2K9fieomxoykQcphCUvrXopfCZWsX-yubTi-6bNWykB5LCXwwPcgkU5ysjLL5kAhlt5jIFrIztCEpbKirvZpHv2tU3OR3A"/>
+<p class="font-headline italic text-primary text-center mt-4 text-sm">"El Dulce Peso de la Victoria"</p>
+</div>
+</div>
+</header>
+<!-- Menu Section -->
+<section class="py-32 bg-surface relative overflow-hidden" id="menu">
+<!-- Decorative Background Frames -->
+<div class="absolute left-0 top-1/4 opacity-10 pointer-events-none transform -translate-x-1/2 -rotate-12 hidden xl:block">
+<div class="wooden-frame w-[500px]">
+<img class="w-full grayscale" src="https://lh3.googleusercontent.com/aida/ADBb0ujMExcBkPuDdHD8mLoquHXOi7jBFaxuJR1z0VRkLn-dEJ3qSf8q8ycCYKXUuyfUqJiqrWVUSlfSJOAhPuwJOFYsbdBjIwjo4Gk5IbS3SD_V2C4Pk9Qs9M-woafXelTlNwG4nx8cQ-MshEmhvOhBkFBEi5mf7wrqLgWvMbAX58TNWvwavMCm0bH8qMX0LMr2DdKNJAcDZaTCg1899E9w0aqeObsS9AG_1vezKMzomrvgZYdcZGIzS_Jlud8XV9trEDp6jhS_FHnm8w"/>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="text-center mb-24">
+<h2 class="font-headline text-6xl text-primary mb-6">Carta Curada</h2>
+<div class="w-24 h-px bg-primary mx-auto mb-6"></div>
+<p class="text-secondary font-label tracking-[0.3em] uppercase text-sm">Ingredientes Orgánicos • Procesos Artesanales</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Left Column: Categories -->
+<div class="lg:col-span-7 space-y-24">
+<!-- Clásicos & Especiales -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-8">
+<h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Clásicos</h3>
+<div class="space-y-6">
+<div class="flex justify-between items-baseline group">
+<div>
+<h4 class="font-bold text-lg">Espresso del Patrón</h4>
+<p class="text-on-surface-variant text-sm italic">Doble shot seleccionado</p>
+</div>
+<span class="font-headline font-bold text-primary">$2.50</span>
+</div>
+<div class="flex justify-between items-baseline group">
+<div>
+<h4 class="font-bold text-lg">Capuchino Tradicional</h4>
+<p class="text-on-surface-variant text-sm italic">Textura de seda</p>
+</div>
+<span class="font-headline font-bold text-primary">$3.80</span>
+</div>
+<div class="flex justify-between items-baseline group">
+<div>
+<h4 class="font-bold text-lg">Americano La Lucha</h4>
+<p class="text-on-surface-variant text-sm italic">Fuerza y balance</p>
+</div>
+<span class="font-headline font-bold text-primary">$3.00</span>
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Especiales</h3>
+<div class="space-y-6">
+<div class="flex justify-between items-baseline group">
+<div>
+<h4 class="font-bold text-lg">Moka de la Casa</h4>
+<p class="text-on-surface-variant text-sm italic">Chocolate 70%</p>
+</div>
+<span class="font-headline font-bold text-primary">$4.50</span>
+</div>
+<div class="flex justify-between items-baseline group">
+<div>
+<h4 class="font-bold text-lg">Affogato Artisanal</h4>
+<p class="text-on-surface-variant text-sm italic">Vainilla Bourbon</p>
+</div>
+<span class="font-headline font-bold text-primary">$5.20</span>
+</div>
+<div class="flex justify-between items-baseline group">
+<div>
+<h4 class="font-bold text-lg">Seasonal Latte</h4>
+<p class="text-on-surface-variant text-sm italic">Pregunte al barista</p>
+</div>
+<span class="font-headline font-bold text-primary">$5.80</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Frame in Grid -->
+<div class="py-12 flex justify-center">
+<div class="wooden-frame w-full max-w-lg -rotate-1 gallery-shadow">
+<img alt="Molienda Visual Guide" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugfiTun15k2b0Y4KhxPlpd-98pw5lFt3YmncO-ZsIPliDhlmqsd4eHgfGYqA0XmiE57fSIlUuSPtb95ZehCig3UW53HseMhtFS1Bfq1_bTaXpeShxxMBZuMA-KmOGteXqRfWNZdWbryf2B5idL81qGmtPc1FqHzj2fzMz_dY7Wzc_LST3wF-_9cyPZpu8ejb0QCg_HdSMDTW_uQYJ7j3yrE78a5wWOMVYF08ovze4aAHfWbFilAcukLbjwxRv0P9sIPd-PRKxZYpw"/>
+<div class="p-4 bg-white">
+<p class="font-label text-[10px] uppercase tracking-widest opacity-60">Molienda y Textura • No. 12</p>
+</div>
+</div>
+</div>
+<!-- Cold & Smoothies -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-8">
+<h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Bebidas Frías</h3>
+<div class="space-y-4">
+<div class="flex justify-between font-medium"><span>Cold Brew 12hrs</span><span>$4.00</span></div>
+<div class="flex justify-between font-medium"><span>Té Helado Cítrico</span><span>$3.50</span></div>
+<div class="flex justify-between font-medium"><span>Fraluchino Caramelo</span><span>$5.00</span></div>
+</div>
+</div>
+<div class="space-y-8">
+<h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Smoothies</h3>
+<div class="space-y-4">
+<div class="flex justify-between font-medium"><span>Bosque Silvestre</span><span>$5.50</span></div>
+<div class="flex justify-between font-medium"><span>Tropical Detox</span><span>$5.50</span></div>
+<div class="flex justify-between font-medium"><span>Nutella Blast</span><span>$6.00</span></div>
+</div>
+</div>
+</div>
+<!-- Snacks & Helados -->
+<div class="space-y-8">
+<h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Para Acompañar</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
+<div class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+<div><span class="block font-bold">Croissant Mantequilla</span><span class="text-xs opacity-60">Horneado hoy</span></div>
+<span class="font-headline">$3.20</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+<div><span class="block font-bold">Tostada Aguacate</span><span class="text-xs opacity-60">Masa madre</span></div>
+<span class="font-headline">$7.50</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+<div><span class="block font-bold">Helado Artesanal</span><span class="text-xs opacity-60">Dos bolas</span></div>
+<span class="font-headline">$4.50</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+<div><span class="block font-bold">Muffin Blueberries</span><span class="text-xs opacity-60">Fruta fresca</span></div>
+<span class="font-headline">$2.90</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Floating Images -->
+<div class="lg:col-span-5 sticky top-32 space-y-16">
+<div class="wooden-frame rotate-3 gallery-shadow ml-auto w-4/5">
+<img alt="Café La Lucha Product Shot" class="w-full" src="https://lh3.googleusercontent.com/aida/ADBb0ui1YRQcuxLeMDz5x5ui43DjGCtKUbyxjdyRlHplb23Zx5wJcNn0gDgvcda1mFe4n7o0Dp0TIQYkIeyjZzFsYOf80tlWJi37EtY8dcpSBNLv6quQ35vGEwJLE2yFZ1a0RvzrSs-ZaHYrJZgBgmwRzBp0OX3yNVpW_xaww7miC4f__GvMh5GgUsq2IahNPC2Mvk6db72c-_fuzi4zu-qTzBsPA00wPFI6v1Z45CvH_Cj7IbNVXJ4SfflA3K7UfnO1AG7ltMIUdGK8pQ"/>
+</div>
+<div class="wooden-frame -rotate-2 gallery-shadow w-4/5">
+<img alt="Iced Coffee Experience" class="w-full" src="https://lh3.googleusercontent.com/aida/ADBb0ui4K2kHWePYM3gCbkzy49rrwI_A4_1fe0dC3r3CMEXgBy_tF29SXwDQlfI2ALLxmtNGnrEmOw2CXxiWkdWCmi3iXi3h4LMeKzW8i5LZCpO3PGzCPI13GN9MlXYTSrZhjGyiuCFsxSev9-sMkqVzGVd34JhrmBfvnVg8ul4mOvQ-qxlFneYMB8XuhZD-MSVilDg8pC6-xFmSQghJ7Hu7TBLufUacltYBoapzQXa1skBnmnINSj4OSdiCl-LdoVC1swQe8qe_oSTyug"/>
+</div>
+<div class="wooden-frame rotate-1 gallery-shadow ml-auto w-3/4">
+<img alt="Coffee Bean Varieties" class="w-full" src="https://lh3.googleusercontent.com/aida/ADBb0ujiYouUqrAAqFO6NXstRGkVhEdmSvBPIQcZOfwsRRmb3vQP8UNMWy7u6VfIJ_dtTw6DfIbdMwjqGn5eFwUdfnCbaB4kxDs77Gm5_8kIEsapxT5eJRqQ-knAvMO3CbGoIzKUoL2vg39eGr7t-LZxPyVXb6wdlBhg5yJ_7-7fmFlkZrCwXkX8XlycZKIEZ3wiOFjf11x0E-BCzdoFQyk3SymbC0eamotjTxz1912m2ojb_39SlR4LJs-m4BtqjCFZdeEWQAVx8oh1bQ"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 bg-primary text-surface relative overflow-hidden" id="contacto">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,50 Q25,0 50,50 T100,50" fill="none" stroke="white" stroke-width="0.5"></path>
+</svg>
+</div>
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="font-headline text-6xl mb-8 leading-tight italic font-light">Escríbenos, <br/><span class="not-italic font-bold">Hablemos de Café</span></h2>
+<p class="text-xl text-surface/70 mb-12 max-w-md leading-relaxed">¿Eventos privados, catering o simplemente quieres saludar? La puerta siempre está abierta.</p>
+<div class="space-y-6">
+<a class="flex items-center gap-6 p-8 bg-white/5 border border-white/10 hover:bg-white/10 transition-all group" href="tel:+123456789">
+<div class="w-12 h-12 flex items-center justify-center bg-surface text-primary rounded-full group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest opacity-50 block mb-1">Llámanos ahora</span>
+<span class="font-headline text-2xl">+1 (234) 567-890</span>
+</div>
+</a>
+<div class="flex items-center gap-6 p-8 bg-white/5 border border-white/10 hover:bg-white/10 transition-all group">
+<div class="w-12 h-12 flex items-center justify-center bg-surface text-primary rounded-full group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest opacity-50 block mb-1">Correo Directo</span>
+<span class="font-headline text-2xl">hola@cafelalucha.com</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Form Piece -->
+<div class="relative">
+<!-- Decorative Frame behind form -->
+<div class="absolute -top-10 -right-10 wooden-frame w-48 rotate-12 opacity-50 hidden md:block">
+<img class="w-full grayscale" src="https://lh3.googleusercontent.com/aida/ADBb0ujMExcBkPuDdHD8mLoquHXOi7jBFaxuJR1z0VRkLn-dEJ3qSf8q8ycCYKXUuyfUqJiqrWVUSlfSJOAhPuwJOFYsbdBjIwjo4Gk5IbS3SD_V2C4Pk9Qs9M-woafXelTlNwG4nx8cQ-MshEmhvOhBkFBEi5mf7wrqLgWvMbAX58TNWvwavMCm0bH8qMX0LMr2DdKNJAcDZaTCg1899E9w0aqeObsS9AG_1vezKMzomrvgZYdcZGIzS_Jlud8XV9trEDp6jhS_FHnm8w"/>
+</div>
+<div class="bg-surface p-12 gallery-shadow border-4 border-primary/10">
+<form class="space-y-6">
+<div class="space-y-1">
+<label class="font-label text-[10px] font-bold uppercase tracking-widest text-primary/60">Nombre Completo</label>
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-primary/10 p-4 focus:ring-0 focus:border-primary transition-colors text-primary" placeholder="Tu nombre..." type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label text-[10px] font-bold uppercase tracking-widest text-primary/60">Correo Electrónico</label>
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-primary/10 p-4 focus:ring-0 focus:border-primary transition-colors text-primary" placeholder="email@ejemplo.com" type="email"/>
+</div>
+<div class="space-y-1">
+<label class="font-label text-[10px] font-bold uppercase tracking-widest text-primary/60">Mensaje</label>
+<textarea class="w-full bg-surface-container-low border-0 border-b-2 border-primary/10 p-4 focus:ring-0 focus:border-primary transition-colors text-primary" placeholder="¿En qué podemos ayudarte?" rows="4"></textarea>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary font-bold tracking-[0.2em] uppercase text-xs hover:bg-primary/90 transition-all gallery-shadow">
+                            Enviar Correspondencia
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-32 bg-surface-container-low" id="ubicacion">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 order-2 lg:order-1">
+<div class="wooden-frame gallery-shadow -rotate-1">
+<div class="h-[450px] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="Stylized map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPmIo48gqaLP8sbFF8frRMMAxpWP5colbcVtSKxalcRv2dEyrxChYLeyxNDmoqkIwe1c9QiKtP6UjhguczkSKJaLGNPjX7VHGvuUkcDN3PouTYP4GPJEwnRdFUxCnMui_B3SE4hiR4ZN9gYo_ZtwqrFW66Z_AogJJ74c05KdhBxJ7oSHIIJHlnFQcJm4XkurFLZocyCNt3AWkyVQOV80JuxpM-ps6Z9EzDljImhgRZUxXTb_CW4jcCgxbeSf27nM0v8wgEdzZcmX0"/>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 order-1 lg:order-2 space-y-8">
+<h2 class="font-headline text-5xl text-primary leading-tight">Encuéntranos en el <br/><span class="italic text-secondary">Corazón</span> de la Ciudad</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-6">
+<div class="space-y-4">
+<p class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Dirección</p>
+<p class="text-2xl font-headline">García Ortiz 20,<br/>Centro, 60000 Uruapan, Mich.</p>
+</div>
+<div class="space-y-4">
+<p class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Horarios de Galería</p>
+<div class="font-body text-lg">
+<p>Lun - Vie: <span class="font-bold">07:00 - 21:00</span></p>
+<p>Sáb - Dom: <span class="font-bold">09:00 - 22:00</span></p>
+</div>
+</div>
+</div>
+<div class="pt-8 flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined text-4xl">location_on</span>
+<span class="font-headline italic text-xl">En el corazón histórico de Uruapan</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary text-surface py-20">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12 border-b border-white/10 pb-16 mb-16">
+<div class="flex flex-col items-center md:items-start gap-4">
+<img alt="Logo Footer" class="h-20 w-auto brightness-0 invert opacity-80" src="https://lh3.googleusercontent.com/aida/ADBb0ujkHuAP6euJLOLuCxPY6txvEL4P66sasMuAkRvxJnevXyE3N1UzDheSfYNiwutTwBqH5It57zUPr9uGutcYihp1Dm3ET2XTzwn0BS3-MBnnYRJLYqCNu6a0BK0UcHux403GDQuHjr2dvO_eXXhr8w9vJCo0gsI6-Ju_b1fDv_Dnk4_0Ax-UAMN4l-nK0uoOEDSP-RKbL2YNpSzMu092RDqR9dARlTgQRHercLi6oXJ8_CNN5H8XTH6eB28JM7y1809cjO2dnFc5Dg"/>
+<p class="font-headline italic text-xl opacity-60">Tradición &amp; Vigor</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-16 text-center md:text-left">
+<div>
+<h5 class="font-label text-[10px] uppercase tracking-[0.3em] opacity-40 mb-6">Navegación</h5>
+<ul class="space-y-3 font-medium text-sm">
+<li><a class="hover:text-secondary-fixed-dim transition-colors" href="#menu">Menu</a></li>
+<li><a class="hover:text-secondary-fixed-dim transition-colors" href="#contacto">Contacto</a></li>
+<li><a class="hover:text-secondary-fixed-dim transition-colors" href="#ubicacion">Ubicación</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label text-[10px] uppercase tracking-[0.3em] opacity-40 mb-6">Social</h5>
+<ul class="space-y-3 font-medium text-sm">
+<li><a class="hover:text-secondary-fixed-dim transition-colors" href="#">Instagram</a></li>
+<li><a class="hover:text-secondary-fixed-dim transition-colors" href="#">Facebook</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-1">
+<h5 class="font-label text-[10px] uppercase tracking-[0.3em] opacity-40 mb-6">Legal</h5>
+<ul class="space-y-3 font-medium text-sm">
+<li><a class="hover:text-secondary-fixed-dim transition-colors" href="#">Privacidad</a></li>
+<li><a class="hover:text-secondary-fixed-dim transition-colors" href="#">Términos</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-label uppercase tracking-widest opacity-40 text-center">
+<p>© 2024 Café La Lucha. Hecho con alma.</p>
+<p>Cultivado en Michoacán • Servido con Orgullo</p>
+</div>
+</div>
+</footer>
+</body></html>
