@@ -3,7 +3,21 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Café La Lucha - Tradición & Vigor</title>
+    
+    <!-- SEO para Google -->
+    <title>Café La Lucha - Tradición & Vigor en Uruapan, Michoacán</title>
+    <meta name="description" content="Disfruta del mejor café en el corazón de Uruapan. Café La Lucha ofrece una carta curada de clásicos, especiales, fraluchinos y snacks en un ambiente de tradición y vigor.">
+    <meta name="keywords" content="café, uruapan, michoacán, café la lucha, cafetería, espresso, latte, fraluchinos, postres, centro histórico">
+    <meta name="author" content="Café La Lucha">
+    <link rel="canonical" href="https://sntuoun.github.io/cafe-la-lucha/">
+    
+    <!-- Open Graph para Redes Sociales -->
+    <meta property="og:title" content="Café La Lucha - Tradición & Vigor">
+    <meta property="og:description" content="Un refugio de aroma y herencia en el corazón de Uruapan.">
+    <meta property="og:image" content="new_images/hero_high_res.jpg">
+    <meta property="og:url" content="https://sntuoun.github.io/cafe-la-lucha/">
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -37,7 +51,6 @@
         .gallery-shadow { box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25) }
         .hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%); }
         
-        /* Estilos para la línea dinámica del menú */
         .nav-link { position: relative; transition: color 0.3s ease; }
         .nav-link::after {
             content: '';
@@ -52,7 +65,6 @@
         .nav-link.active::after { width: 100%; }
         .nav-link.active { color: #361f1a; font-weight: 700; }
 
-        /* Mejoras para la versión móvil */
         @media (max-width: 768px) {
             .hero-title { font-size: 4.5rem !important; line-height: 0.9 !important; }
             .mobile-gallery-piece { transform: rotate(0deg) scale(1) !important; margin-top: 2rem; width: 100% !important; }
@@ -66,7 +78,6 @@
     <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
         <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
             <a class="flex items-center gap-3" href="#inicio" onclick="setActive(this)">
-                <!-- Logo superior corregido -->
                 <img alt="Café La Lucha Logo" class="h-10 w-auto object-contain" src="new_images/img-003.jpg"/>
                 <span class="font-headline text-xl font-bold italic text-primary hidden sm:block">La Lucha</span>
             </a>
@@ -80,7 +91,6 @@
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
-        <!-- Mobile Menu Overlay -->
         <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-outline-variant/30 px-6 py-8 space-y-6">
             <a class="block font-label text-sm uppercase tracking-widest font-bold text-primary" href="#inicio" onclick="toggleMobileMenu()">Inicio</a>
             <a class="block font-label text-sm uppercase tracking-widest font-medium text-on-surface/60" href="#menu" onclick="toggleMobileMenu()">Menu</a>
@@ -111,7 +121,6 @@
                 </div>
             </div>
         </div>
-        <!-- Floating Gallery Piece 1 -->
         <div class="relative lg:absolute right-[5%] top-[20%] z-20 px-8 lg:px-0 mt-12 lg:mt-0 transform lg:rotate-6 lg:scale-110">
             <div class="wooden-frame w-full lg:w-80 gallery-shadow mx-auto">
                 <img alt="Caramel Latte Art" class="w-full h-auto" src="new_images/img-002.jpg"/>
@@ -130,9 +139,7 @@
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-                <!-- Left Column: Menu Items -->
                 <div class="lg:col-span-7 space-y-16 md:space-y-24">
-                    <!-- Clásicos & Especiales -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 menu-grid">
                         <div class="space-y-8">
                             <h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Clásicos</h3>
@@ -165,14 +172,12 @@
                         </div>
                     </div>
 
-                    <!-- Molienda Section with Image -->
                     <div class="py-8 md:py-12">
                         <div class="wooden-frame w-full gallery-shadow lg:-rotate-1">
                             <img alt="Molienda Visual Guide" class="w-full h-auto object-cover" src="new_images/img-004.jpg"/>
                         </div>
                     </div>
 
-                    <!-- Bebidas Frías & Smoothies -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 menu-grid">
                         <div class="space-y-8">
                             <h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Bebidas Frías</h3>
@@ -203,7 +208,6 @@
                         </div>
                     </div>
 
-                    <!-- Fraluchinos & Snacks -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 menu-grid">
                         <div class="space-y-8">
                             <h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Fraluchinos</h3>
@@ -252,7 +256,6 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Floating Images -->
                 <div class="lg:col-span-5 lg:sticky lg:top-32 space-y-12 md:space-y-16 mt-16 lg:mt-0">
                     <div class="wooden-frame lg:rotate-3 gallery-shadow lg:ml-auto w-full lg:w-4/5">
                         <img alt="Café La Lucha Bags" class="w-full" src="new_images/img-001.jpg"/>
@@ -314,7 +317,6 @@
     <!-- Footer -->
     <footer class="bg-primary text-surface py-20 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-8 text-center">
-            <!-- Logo del footer corregido (blanco sobre transparente) -->
             <img alt="Logo Footer" class="h-20 w-auto mx-auto mb-8 opacity-100" src="new_images/footer_logo_white.png"/>
             <p class="font-headline italic text-xl opacity-60 mb-8">Tradición &amp; Vigor</p>
             <p class="text-xs font-label uppercase tracking-widest opacity-40">2024 CAFÉ LA LUCHA. CULTIVADO EN MICHOACÁN SERVIDO CON ORGULLO</p>
