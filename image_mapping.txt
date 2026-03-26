@@ -1,0 +1,10 @@
+Mapeo de imágenes para Café La Lucha:
+
+1. Hero Background: img-000.jpg (Interior del café)
+2. Logo: img-003.jpg (Logo circular Café La Lucha)
+3. Floating Piece 1 (Hero): img-002.jpg (Vaso de Caramel La Lucha)
+4. Menu Card 1: img-004.jpg (Carta de precios Molido y en Grano)
+5. Menu Card 2: img-001.jpg (Bolsas de café con precios)
+6. Menu Card 3: img-005.jpg (Bolsas de café "El favorito de los mexicanos")
+7. Floating Piece 2 (Menu): img-002.jpg (Repetido o similar)
+8. Contact/Footer: img-003.jpg (Logo)

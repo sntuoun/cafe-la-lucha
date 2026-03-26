@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Café La Lucha - Tradición & Vigor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#fcf9f4",
+              "primary": "#361f1a",
+              "secondary": "#4b644e",
+              "on-surface": "#1c1c19",
+              "on-primary": "#ffffff",
+              "outline-variant": "#d4c3bf",
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; vertical-align: middle }
+        .wooden-frame { border: 12px solid #361f1a; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.5); background: white; padding: 8px }
+        .gallery-shadow { box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25) }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%); }
+        
+        /* Estilos para la línea dinámica del menú */
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #361f1a;
+            transition: width 0.3s ease;
+        }
+        .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: #361f1a; font-weight: 700; }
+
+        /* Mejoras para la versión móvil */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 4.5rem !important; line-height: 0.9 !important; }
+            .mobile-gallery-piece { transform: rotate(0deg) scale(1) !important; margin-top: 2rem; width: 100% !important; }
+            .menu-grid { gap: 3rem !important; }
+            .wooden-frame { border-width: 8px !important; }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/20">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a class="flex items-center gap-3" href="#inicio" onclick="setActive(this)">
+                <!-- Logo superior corregido -->
+                <img alt="Café La Lucha Logo" class="h-10 w-auto object-contain" src="new_images/img-003.jpg"/>
+                <span class="font-headline text-xl font-bold italic text-primary hidden sm:block">La Lucha</span>
+            </a>
+            <div class="hidden md:flex gap-10 items-center">
+                <a id="link-inicio" class="nav-link active font-label text-xs uppercase tracking-widest font-medium text-on-surface/60 hover:text-primary" href="#inicio" onclick="setActive(this)">Inicio</a>
+                <a id="link-menu" class="nav-link font-label text-xs uppercase tracking-widest font-medium text-on-surface/60 hover:text-primary" href="#menu" onclick="setActive(this)">Menu</a>
+                <a id="link-ubicacion" class="nav-link font-label text-xs uppercase tracking-widest font-medium text-on-surface/60 hover:text-primary" href="#ubicacion" onclick="setActive(this)">Ubicación</a>
+                <button onclick="document.getElementById('ubicacion').scrollIntoView()" class="bg-primary text-on-primary px-8 py-2.5 rounded-sm font-bold tracking-tighter uppercase text-xs hover:opacity-90 transition-all">Reservar</button>
+            </div>
+            <button class="md:hidden text-primary" onclick="toggleMobileMenu()">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-outline-variant/30 px-6 py-8 space-y-6">
+            <a class="block font-label text-sm uppercase tracking-widest font-bold text-primary" href="#inicio" onclick="toggleMobileMenu()">Inicio</a>
+            <a class="block font-label text-sm uppercase tracking-widest font-medium text-on-surface/60" href="#menu" onclick="toggleMobileMenu()">Menu</a>
+            <a class="block font-label text-sm uppercase tracking-widest font-medium text-on-surface/60" href="#ubicacion" onclick="toggleMobileMenu()">Ubicación</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="relative min-h-screen flex flex-col justify-center pt-24 overflow-hidden bg-primary">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 hero-overlay z-10"></div>
+            <img alt="Interior Café La Lucha" class="w-full h-full object-cover opacity-90 scale-105" src="new_images/hero_high_res.jpg"/>
+        </div>
+        <div class="relative z-20 max-w-7xl mx-auto px-8 w-full">
+            <div class="max-w-4xl">
+                <span class="font-label tracking-[0.4em] uppercase text-surface mb-6 block text-sm opacity-80">Patrimonio del Grano</span>
+                <h1 class="hero-title font-headline text-7xl md:text-[10rem] text-surface leading-[0.85] mb-10">
+                    Café <br/>
+                    <span class="italic font-light">La Lucha</span>
+                </h1>
+                <p class="font-body text-xl md:text-2xl text-surface/90 max-w-xl mb-12 leading-relaxed font-light">
+                    Un refugio de aroma y herencia en el corazón de la ciudad. Donde cada grano cuenta una historia de resistencia.
+                </p>
+                <div class="flex flex-wrap gap-6">
+                    <a class="bg-surface text-primary px-12 py-5 rounded-sm font-bold tracking-widest uppercase text-sm hover:bg-white transition-all gallery-shadow" href="#menu">
+                        Explorar la Colección
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Floating Gallery Piece 1 -->
+        <div class="relative lg:absolute right-[5%] top-[20%] z-20 px-8 lg:px-0 mt-12 lg:mt-0 transform lg:rotate-6 lg:scale-110">
+            <div class="wooden-frame w-full lg:w-80 gallery-shadow mx-auto">
+                <img alt="Caramel Latte Art" class="w-full h-auto" src="new_images/img-002.jpg"/>
+                <p class="font-headline italic text-primary text-center mt-4 text-sm">"El Dulce Peso de la Victoria"</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="py-24 md:py-32 bg-surface relative overflow-hidden" id="menu">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+            <div class="text-center mb-16 md:mb-24">
+                <h2 class="font-headline text-5xl md:text-6xl text-primary mb-6">Carta Curada</h2>
+                <div class="w-24 h-px bg-primary mx-auto mb-6"></div>
+                <p class="text-secondary font-label tracking-[0.3em] uppercase text-xs md:text-sm">Ingredientes Orgánicos • Procesos Artesanales</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                <!-- Left Column: Menu Items -->
+                <div class="lg:col-span-7 space-y-16 md:space-y-24">
+                    <!-- Clásicos & Especiales -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 menu-grid">
+                        <div class="space-y-8">
+                            <h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Clásicos</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between"><span>Espresso</span></div>
+                                <div class="flex justify-between"><span>Espresso cortado</span></div>
+                                <div class="flex justify-between"><span>Espresso doble</span></div>
+                                <div class="flex justify-between"><span>Café de olla / americano</span></div>
+                                <div class="flex justify-between"><span>Café con leche</span></div>
+                                <div class="flex justify-between"><span>Café con crema</span></div>
+                                <div class="flex justify-between"><span>Latte</span></div>
+                                <div class="flex justify-between"><span>Capuchino</span></div>
+                                <p class="text-xs font-bold text-primary/60 pt-2">Precios: $39 – $56</p>
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Especiales</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between"><span>Café suizo</span></div>
+                                <div class="flex justify-between"><span>Americano chocolate</span></div>
+                                <div class="flex justify-between"><span>Dulce americano</span></div>
+                                <div class="flex justify-between"><span>Chocolate blanco</span></div>
+                                <div class="flex justify-between"><span>Matcha latte</span></div>
+                                <div class="flex justify-between"><span>Chocolate latte</span></div>
+                                <div class="flex justify-between"><span>Dirty chai</span></div>
+                                <div class="flex justify-between"><span>Choco menta</span></div>
+                                <div class="flex justify-between"><span>Caramel La Lucha</span></div>
+                                <p class="text-xs font-bold text-primary/60 pt-2">Precios: $52 – $80</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Molienda Section with Image -->
+                    <div class="py-8 md:py-12">
+                        <div class="wooden-frame w-full gallery-shadow lg:-rotate-1">
+                            <img alt="Molienda Visual Guide" class="w-full h-auto object-cover" src="new_images/img-004.jpg"/>
+                        </div>
+                    </div>
+
+                    <!-- Bebidas Frías & Smoothies -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 menu-grid">
+                        <div class="space-y-8">
+                            <h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Bebidas Frías</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between"><span>Tisana</span></div>
+                                <div class="flex justify-between"><span>Latte frío</span></div>
+                                <div class="flex justify-between"><span>Soda italiana</span></div>
+                                <div class="flex justify-between"><span>Chamoyada</span></div>
+                                <div class="flex justify-between"><span>Piña colada</span></div>
+                                <div class="flex justify-between"><span>Piña colada + licor</span></div>
+                                <div class="flex justify-between"><span>Chai frío</span></div>
+                                <div class="flex justify-between"><span>Matcha frappé</span></div>
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Smoothies</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between"><span>Mango</span></div>
+                                <div class="flex justify-between"><span>Malteada</span></div>
+                                <div class="flex justify-between"><span>Verde detox</span></div>
+                                <div class="flex justify-between"><span>Choco banana</span></div>
+                                <div class="flex justify-between"><span>Mango–maracuyá</span></div>
+                                <div class="flex justify-between"><span>Aguacate–maracuyá</span></div>
+                                <div class="flex justify-between"><span>Super berry</span></div>
+                                <div class="flex justify-between"><span>Scoop de proteína</span></div>
+                                <p class="text-xs font-bold text-primary/60 pt-2">Precios: $72 – $92</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fraluchinos & Snacks -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 menu-grid">
+                        <div class="space-y-8">
+                            <h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Fraluchinos</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between"><span>De la casa</span></div>
+                                <div class="flex justify-between"><span>Con sabor</span></div>
+                                <div class="flex justify-between"><span>Oreo</span></div>
+                                <div class="flex justify-between"><span>Mazapán</span></div>
+                                <div class="flex justify-between"><span>Chocolate blanco</span></div>
+                                <div class="flex justify-between"><span>De nieve</span></div>
+                                <div class="flex justify-between"><span>Express</span></div>
+                                <div class="flex justify-between"><span>Cremochino</span></div>
+                                <p class="text-xs font-bold text-primary/60 pt-2">Precios: $56 – $87</p>
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Snacks & Helados</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between"><span>Galletas</span></div>
+                                <div class="flex justify-between"><span>Ensaladas</span></div>
+                                <div class="flex justify-between"><span>Pan dulce</span></div>
+                                <div class="flex justify-between"><span>Postres variados</span></div>
+                                <div class="flex justify-between font-bold pt-4"><span>Helados:</span></div>
+                                <div class="flex justify-between"><span>Café, Fresa, Vainilla, Chocolate</span></div>
+                                <p class="text-xs font-bold text-primary/60 pt-2">Combos disponibles (ej. 2 bolas)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-8 pt-12">
+                        <h3 class="font-headline text-3xl text-primary border-b border-primary/20 pb-4">Otros</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
+                            <div class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+                                <div><span class="block font-bold">Panes & Pays</span></div>
+                            </div>
+                            <div class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+                                <div><span class="block font-bold">Tes (tés calientes)</span></div>
+                            </div>
+                            <div class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+                                <div><span class="block font-bold">Cold brew</span></div>
+                            </div>
+                            <div class="flex justify-between items-baseline border-b border-outline-variant/30 pb-2">
+                                <div><span class="block font-bold">Agua & Refrescos</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Floating Images -->
+                <div class="lg:col-span-5 lg:sticky lg:top-32 space-y-12 md:space-y-16 mt-16 lg:mt-0">
+                    <div class="wooden-frame lg:rotate-3 gallery-shadow lg:ml-auto w-full lg:w-4/5">
+                        <img alt="Café La Lucha Bags" class="w-full" src="new_images/img-001.jpg"/>
+                    </div>
+                    <div class="wooden-frame lg:-rotate-2 gallery-shadow w-full lg:w-4/5">
+                        <img alt="Caramel Experience" class="w-full" src="new_images/img-002.jpg"/>
+                    </div>
+                    <div class="wooden-frame lg:rotate-1 gallery-shadow lg:ml-auto w-full lg:w-3/4">
+                        <img alt="Favorito de Mexicanos" class="w-full" src="new_images/img-005.jpg"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="py-24 md:py-32 bg-surface-container-low" id="ubicacion">
+        <div class="max-w-7xl mx-auto px-6 md:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-6 order-2 lg:order-1">
+                    <div class="wooden-frame gallery-shadow lg:-rotate-1 overflow-hidden">
+                        <div class="h-[350px] md:h-[450px] w-full">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.567890123!2d-102.0623456789!3d19.4123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842e197f6676055b%3A0x887890ab12345678!2sGarc%C3%ADa%20Ortiz%2020%2C%20Centro%2C%2060000%20Uruapan%2C%20Mich.!5e0!3m2!1ses!2smx!4v1711312345678!5m2!1ses!2smx" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 order-1 lg:order-2 space-y-8">
+                    <h2 class="font-headline text-4xl md:text-5xl text-primary leading-tight">Encuéntranos en el <br/><span class="italic text-secondary">Corazón</span> de la Ciudad</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-6">
+                        <div class="space-y-4">
+                            <p class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Dirección</p>
+                            <p class="text-xl md:text-2xl font-headline">García Ortiz 20,<br/>Centro, 60000 Uruapan, Mich.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <p class="font-label text-[10px] uppercase tracking-widest text-secondary font-bold">Horarios de Galería</p>
+                            <div class="font-body text-lg">
+                                <p>Lun - Vie: <span class="font-bold">07:00 - 21:00</span></p>
+                                <p>Sáb - Dom: <span class="font-bold">09:00 - 22:00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-8 flex items-center gap-4 text-primary">
+                        <span class="material-symbols-outlined text-4xl">location_on</span>
+                        <span class="font-headline italic text-xl">En el corazón histórico de Uruapan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-surface py-20 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-8 text-center">
+            <!-- Logo del footer corregido (blanco sobre transparente) -->
+            <img alt="Logo Footer" class="h-20 w-auto mx-auto mb-8 opacity-100" src="new_images/footer_logo_white.png"/>
+            <p class="font-headline italic text-xl opacity-60 mb-8">Tradición &amp; Vigor</p>
+            <p class="text-xs font-label uppercase tracking-widest opacity-40">2024 CAFÉ LA LUCHA. CULTIVADO EN MICHOACÁN SERVIDO CON ORGULLO</p>
+        </div>
+    </footer>
+
+    <script>
+        function setActive(element) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            if (element.classList.contains('nav-link')) {
+                element.classList.add('active');
+            } else {
+                document.getElementById('link-inicio').classList.add('active');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('header, section');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
